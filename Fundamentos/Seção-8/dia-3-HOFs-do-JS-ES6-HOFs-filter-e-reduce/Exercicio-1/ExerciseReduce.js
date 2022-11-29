@@ -84,5 +84,25 @@ const countries = [
         return countries.reduce((acc, curr) => acc.name.length > curr.name.length ? acc : curr);
     }
     console.log(biggestName());
-    
+
+    // funcao para retornar a quantidade de vezes que a letra A maiuscula ou minuscula aparece no array de nomes
+    const names = [
+        'Aanemarie', 'Adervandes', 'Akifusa',
+        'Abegildo', 'Adicellia', 'Aladonata',
+        'Abeladerco', 'Adieidy', 'Alarucha',
+      ];
+      
+      const expectedResult = 20;
+      
+      const countA = () => {
+        // retorne seu código aqui
+        return names.reduce((acc, curr) => {
+            return acc + curr.split('').reduce((acc, curr) => {
+                return acc + (curr === 'a' || curr === 'A' ? 1 : 0);
+            }, 0);
+        }
+        , 0);
+        }
+
+        console.log(countA());
 
